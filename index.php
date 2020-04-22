@@ -19,15 +19,29 @@
     body {
       padding: 20px;
     }
+    .list-group-item:nth-child(even){
+      background-color:#eee;
+    }
+    .delete_text {
+      color: white;
+      text-decoration: none;
+    }
+    .delete_text:hover {
+      color: white;
+      text-decoration: none;
+    }
   </style>
 </head>
 
 <body>
   <div class="card" style="width: 18rem;">
-    <div class="card-header"> To Do </div>
+    <div class="card-header">To Do</div>
     <ul class="list-group list-group-flush">
       <?php while($row = $result->fetch_assoc()) { ?>
-      <li class="list-group-item"> <?php echo $row['title']; ?></li>
+        <div class="list-group-item">
+          <p> <?php echo $row['title']; ?></p>
+          <a class="delete_text btn btn-danger" href="delete.php?ID=<?php echo($row["ID"]);?>">Delete</a>
+        </div>
       <?php } ?>
     </ul>
   </div>
