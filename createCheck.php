@@ -5,15 +5,16 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-$id = $_GET['ID'];
+$title = $_GET['title_create'];
+$description = $_GET['description_create'];
 
-$sql = "DELETE FROM `list` WHERE ID='$id'";
+$sql = "INSERT INTO 'list'('title', 'description') VALUES ('$title', '$description')";
 
 if ($conn->query($sql) === TRUE) {
 ?>
-    Item deleted!
-    <br>
-    <a href="index.php">Home</a>
+    Item created!
 <?php
     }
 ?>
+
+<a href="index.php">Home</a>
