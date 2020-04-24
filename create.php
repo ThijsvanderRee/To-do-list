@@ -24,12 +24,12 @@
 <form method="get" action="createCheck.php">
     <div class="form-group">
       <label for="title_create">Title</label>
-      <input class="form-control" type="text" placeholder="Titel">
+      <input class="form-control" name="title_create" type="text" placeholder="Titel">
     </div>
 
     <div class="form-group">
       <label for="description_create">Description</label>
-      <input class="form-control" type="text" placeholder="Beschrijving">
+      <input class="form-control" name="description_create" type="text" placeholder="Beschrijving">
     </div>
 
   <button type="submit" name="submit" class="btn btn-success">Save</button>

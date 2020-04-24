@@ -1,6 +1,6 @@
 <?php
     $conn = new mysqli('localhost', 'root', 'mysql', 'to-do-list');
-    $conn->set_charset("utf8");
+    // $conn->set_charset("utf8");
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
@@ -9,10 +9,10 @@ $id = $_GET['ID'];
 $title = $_GET['title'];
 $description = $_GET['description'];
 
-$sql = "UPDATE list SET 'title' = '$title', 'description' = '$description' WHERE ID = '$id'";
-echo $id;
+$sql = "UPDATE list SET title = '$title', description = '$description' WHERE ID = '$id'";
 
 if ($conn->query($sql) === TRUE) {
+  echo $id;
 ?>
     Your changes are saved!
 <?php
