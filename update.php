@@ -1,6 +1,5 @@
 <?php
     $conn = new mysqli('localhost', 'root', 'mysql', 'to-do-list');
-    $conn->set_charset("utf8");
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
@@ -24,12 +23,12 @@
 <form method="get" action="updateCheck.php">
     <div class="form-group">
       <label for="title_edit">Title</label>
-      <input class="form-control" type="text" placeholder="Titel">
+      <input class="form-control" name="title_edit" type="text" placeholder="Titel">
     </div>
 
     <div class="form-group">
       <label for="description_edit">Description</label>
-      <input class="form-control" type="text" placeholder="Beschrijving">
+      <input class="form-control" name="description_edit" type="text" placeholder="Beschrijving">
     </div>
 
   <button type="submit" name="submit" class="btn btn-success">Save</button>
