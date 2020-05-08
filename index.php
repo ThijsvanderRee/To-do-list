@@ -26,10 +26,8 @@
 </head>
 
 <body>
-  <a href="create.php" class="btn btn-primary">Create</a>
-  <br><br>
   <div class="card" style="width: 18rem;">
-    <div class="card-header">To Do</div>
+    <div class="card-header"><a href="create.php" class="btn btn-primary">Create new item</a></div>
     <ul class="list-group list-group-flush">
       <?php while($row = $result->fetch_assoc()) { ?>
         <div class="list-group-item">

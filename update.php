@@ -10,9 +10,6 @@
 
     $sql = "SELECT * FROM list WHERE ID = '$id'";
     $result = $conn->query($sql);
-    echo $id . '<br>';
-    echo $title . '<br>';
-    echo $description . '<br><br>';
 
 ?>
 
@@ -40,5 +37,5 @@
       <input class="form-control" name="description_edit" type="text" placeholder="Beschrijving">
     </div>
 
-  <button type="submit" name="save" class="btn btn-success">Save</button>
+  <button type="submit" name="save" class="btn btn-success" value="<?php echo $id;?>">Save</button>
 </form>
