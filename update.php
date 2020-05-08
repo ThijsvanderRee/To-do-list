@@ -3,8 +3,17 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-        $sql = "SELECT * FROM list";
-        $result = $conn->query($sql);
+
+    $id = $_GET['ID'];
+    $title = $_GET['title'];
+    $description = $_GET['description'];
+
+    $sql = "SELECT * FROM list WHERE ID = '$id'";
+    $result = $conn->query($sql);
+    echo $id . '<br>';
+    echo $title . '<br>';
+    echo $description . '<br><br>';
+
 ?>
 
 <head>
@@ -31,5 +40,5 @@
       <input class="form-control" name="description_edit" type="text" placeholder="Beschrijving">
     </div>
 
-  <button type="submit" name="submit" class="btn btn-success">Save</button>
+  <button type="submit" name="save" class="btn btn-success">Save</button>
 </form>

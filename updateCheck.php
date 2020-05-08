@@ -12,6 +12,8 @@ $sql = "UPDATE list SET title = '$title', description = '$description' WHERE ID 
 
 if ($conn->query($sql) === TRUE) {
   echo $id . '<br>';
+  echo $title . '<br>';
+  echo $description . '<br>';
 ?>
 <br>
     Your changes are saved!

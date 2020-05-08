@@ -36,7 +36,7 @@
           <h4> <?php echo $row['title']; ?></h4>
           <p> <?php echo $row['description'] ?></p>
           <a class="btn btn-danger" href="delete.php?ID=<?php echo($row["ID"]);?>">Delete</a>
-          <a class="btn btn-success" href="update.php?ID=<?php echo($row["ID"]);?>">Edit</a>
+          <a class="btn btn-success" href="update.php?ID=<?php echo($row["ID"]);?>&title=<?php echo($row['title']);?>&description=<?php echo($row['description']);?>">Edit</a>
         </div>
       <?php } ?>
     </ul>
