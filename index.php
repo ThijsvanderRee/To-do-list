@@ -4,7 +4,8 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-        $sql = "SELECT * FROM list";
+        $tables = array();
+        $sql = "SHOW TABLES";
         $result = $conn->query($sql);
 ?>
 
@@ -22,21 +23,38 @@
     .list-group-item:nth-child(even){
       background-color:#eee;
     }
+    .card {
+      display: inline-flex;
+    }
   </style>
 </head>
 
 <body>
-  <div class="card" style="width: 18rem;">
-    <div class="card-header"><a href="create.php" class="btn btn-primary">Create new item</a></div>
-    <ul class="list-group list-group-flush">
-      <?php while($row = $result->fetch_assoc()) { ?>
-        <div class="list-group-item">
-          <h4> <?php echo $row['title']; ?></h4>
-          <p> <?php echo $row['description'] ?></p>
-          <a class="btn btn-danger" href="delete.php?ID=<?php echo($row["ID"]);?>">Delete</a>
-          <a class="btn btn-success" href="update.php?ID=<?php echo($row["ID"]);?>&title=<?php echo($row['title']);?>&description=<?php echo($row['description']);?>">Edit</a>
-        </div>
-      <?php } ?>
-    </ul>
-  </div>
+  <?php
+    while ($row = mysqli_fetch_row($result)) {
+        $tables[] = $row[0];
+    }
+
+  $data = array();
+  foreach($tables as $table){
+      $query = "select * from $table";
+      $res = mysqli_query($conn,$query);
+      ?>
+      <div class="card" style="width: 18rem;">
+        <div class="card-header"><a href="create.php?table=<?php echo $table; ?>" class="btn btn-primary">Create new item</a></div>
+        <ul class="list-group list-group-flush">
+          <?php while($row = $res->fetch_assoc()) { ?>
+            <div class="list-group-item">
+              <h4> <?php echo $row['title']; ?></h4>
+              <p> <?php echo $row['description'] ?></p>
+              <a class="btn btn-danger" href="delete.php?ID=<?php echo($row["ID"]);?>&table=<?php echo $table ?>">Delete</a>
+              <a class="btn btn-success" href="update.php?ID=<?php echo($row["ID"]);?>&title=<?php echo($row['title']);?>&description=<?php echo($row['description']);?>&table=<?php echo $table ?>">Edit</a>
+            </div>
+          <?php } ?>
+        </ul>
+      </div>
+      <?php
+  }
+
+   ?>
 </body>

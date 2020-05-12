@@ -7,8 +7,9 @@
 $id = $_GET['save'];
 $title = $_GET['title_edit'];
 $description = $_GET['description_edit'];
+$table = $_GET['table'];
 
-$sql = "UPDATE list SET title = '$title', description = '$description' WHERE ID = '$id'";
+$sql = "UPDATE '$table' SET title = '$title', description = '$description' WHERE ID = '$id'";
 
 if ($conn->query($sql) === TRUE) {
 ?>

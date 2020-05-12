@@ -3,7 +3,9 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-        $sql = "SELECT * FROM list";
+        $table = $_GET['table'];
+
+        $sql = "SELECT * FROM $table";
         $result = $conn->query($sql);
 ?>
 
@@ -31,5 +33,5 @@
       <input class="form-control" name="description_create" type="text" placeholder="Beschrijving">
     </div>
 
-  <button type="submit" name="submit" class="btn btn-success">Save</button>
+  <button type="submit" name="submit" class="btn btn-success" value="<?php echo $table; ?>">Save</button>
 </form>
