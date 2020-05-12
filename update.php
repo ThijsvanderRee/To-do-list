@@ -9,7 +9,7 @@
     $description = $_GET['description'];
     $table = $_GET['table'];
 
-    $sql = "SELECT * FROM $table WHERE ID = '$id'";
+    $sql = "SELECT * FROM '$table' WHERE ID = '$id'";
     $result = $conn->query($sql);
 
 ?>

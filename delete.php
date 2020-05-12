@@ -5,8 +5,9 @@
     }
 
 $id = $_GET['ID'];
+$table = $_GET['table'];
 
-$sql = "DELETE FROM `list` WHERE ID='$id'";
+$sql = "DELETE FROM $table WHERE ID='$id'";
 
 if ($conn->query($sql) === TRUE) {
 ?>
