@@ -33,5 +33,5 @@
       <input class="form-control" name="description_create" type="text" placeholder="Beschrijving">
     </div>
 
-  <button type="submit" name="submit" class="btn btn-success" value="<?php echo $table; ?>">Save</button>
+  <button type="submit" name="create" class="btn btn-success" value="<?php echo $table; ?>">Save</button>
 </form>

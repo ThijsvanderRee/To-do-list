@@ -6,9 +6,9 @@
 
 $title = $_GET['title_create'];
 $description = $_GET['description_create'];
-$table = $_GET['table'];
+$table = $_GET['create'];
 
-$sql = "INSERT INTO '$table'(title, description) VALUES ('$title', '$description')";
+$sql = "INSERT INTO $table(title, description) VALUES ('$title', '$description')";
 
 if ($conn->query($sql) === TRUE) {
 ?>
