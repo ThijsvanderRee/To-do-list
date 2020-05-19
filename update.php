@@ -9,7 +9,7 @@
     $description = $_GET['description'];
     $table = $_GET['table'];
 
-    $sql = "SELECT * FROM '$table' WHERE ID = '$id'";
+    $sql = "SELECT * FROM $table WHERE ID = '$id'";
     $result = $conn->query($sql);
 
 ?>
@@ -38,5 +38,6 @@
       <input class="form-control" name="description_edit" type="text" placeholder="Beschrijving">
     </div>
 
-  <button type="submit" name="save" class="btn btn-success" value="<?php echo $id;?>" data-value="<?php echo $table; ?>">Save</button>
+  <button type="submit" name="save" class="btn btn-success" value="<?php echo $id;?>">Save</button>
+  <input name="table" style="display:none;" value="<?php echo $table; ?>">
 </form>
