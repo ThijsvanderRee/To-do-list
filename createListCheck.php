@@ -6,12 +6,11 @@
 
     $list_name = $_GET['list_name'];
 
-    $sql = "CREATE TABLE `to-do-list`. $list_name (
+    $sql = "CREATE TABLE `to-do-list`. `$list_name` (
       `ID` INT NOT NULL AUTO_INCREMENT ,
       `title` VARCHAR(255) CHARACTER SET armscii8 COLLATE armscii8_bin NULL DEFAULT NULL ,
-      `descripion` VARCHAR(255) CHARACTER SET armscii8 COLLATE armscii8_bin NULL DEFAULT NULL ,
+      `description` VARCHAR(255) CHARACTER SET armscii8 COLLATE armscii8_bin NULL DEFAULT NULL ,
       PRIMARY KEY (`ID`)) ENGINE = InnoDB;"
-        // $result = $conn->query($sql);
 ?>
 
 <head>
@@ -33,9 +32,9 @@ if ($conn->query($sql) === TRUE) {
   List created!
 </div>
 <?php } else { ?>
-<div class="alert alert-warning">
-  List not created!
-</div>
+  <div class="alert alert-warning">
+    Something went wrong, list not created.
+  </div>
 <?php } ?>
 <br>
 <a href="index.php">Home</a>

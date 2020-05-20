@@ -38,7 +38,7 @@
 
   $data = array();
   foreach($tables as $table){
-      $query = "select * from $table";
+      $query = "select * from `$table`";
       $res = mysqli_query($conn,$query);
       ?>
       <div class="card" style="width: 18rem;">

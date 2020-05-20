@@ -37,7 +37,7 @@ if ($conn->query($sql) === TRUE) {
 } else {
   ?>
   <div class="alert alert-warning text-center w-100">
-    Oh no! Something went wrong...
+    Something went wrong, your changes are not saved.
   </div>
   <?php
 }

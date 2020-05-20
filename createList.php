@@ -24,6 +24,6 @@
         <label for="list_name">List name</label>
         <input class="form-control" name="list_name" type="text" placeholder="Name">
       </div>
-    <button type="submit" name="create" class="btn btn-success">Save</button>
+    <button type="submit" name="create" class="btn btn-success" value="">Save</button>
   </form>
 </body>
