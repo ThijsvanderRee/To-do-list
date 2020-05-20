@@ -44,8 +44,8 @@
       <div class="card" style="width: 18rem;">
         <div class="card-header">
           <h2><?php echo $table; ?></h2>
-          <hr>
           <a href="deleteList.php?table=<?php echo $table;?>" class="btn btn-danger">Delete list</a>
+          <a href="updateList.php?table=<?php echo $table;?>" class="btn btn-success">Edit list</a>
           <hr>
           <a href="create.php?table=<?php echo $table;?>" class="btn btn-primary">Create new item</a>
         </div>
