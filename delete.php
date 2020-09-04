@@ -8,6 +8,8 @@ $id = $_GET['ID'];
 $table = $_GET['table'];
 
 $sql = "DELETE FROM $table WHERE ID='$id'";
+echo $table;
+echo $id;
 ?>
 
 <head>
