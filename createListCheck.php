@@ -5,9 +5,9 @@
     }
 
     $list_name = $_GET['list_name'];
-    $list_name_new = preg_replace('/\s+/', '_', $list_name);
-    echo $list_name_new;
-    $sql = "CREATE TABLE `to-do-list`. `$list_name_new` (
+    $list_name_= str_replace(' ', '_', $list_name);
+    // echo $list_name_;
+    $sql = "CREATE TABLE `to-do-list`. `$list_name_` (
       `ID` INT NOT NULL AUTO_INCREMENT ,
       `title` VARCHAR(255) CHARACTER SET armscii8 COLLATE armscii8_bin NULL DEFAULT NULL ,
       `description` VARCHAR(255) CHARACTER SET armscii8 COLLATE armscii8_bin NULL DEFAULT NULL ,

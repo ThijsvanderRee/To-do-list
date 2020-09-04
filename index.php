@@ -40,10 +40,11 @@
   foreach($tables as $table){
       $query = "select * from `$table`";
       $res = mysqli_query($conn,$query);
+      $table_ = str_replace('_', ' ', $table);
       ?>
       <div class="card" style="width: 18rem;">
         <div class="card-header">
-          <h2><?php echo $table; ?></h2>
+          <h2><?php echo $table_; ?></h2>
           <a href="deleteList.php?table=<?php echo $table;?>" class="btn btn-danger">Delete list</a>
           <a href="updateList.php?table=<?php echo $table;?>" class="btn btn-success">Edit list</a>
           <hr>
