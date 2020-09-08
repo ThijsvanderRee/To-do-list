@@ -34,8 +34,8 @@
     </div>
 
     <div class="form-group">
-      <label for="datetime_create">Time</label>
-      <input class="form-control" type="datetime-local" name="datetime_create">
+      <label for="datetime_create">Time in minutes</label>
+      <input class="form-control" type="number" name="time_min_create">
     </div>
 
   <button type="submit" name="create" class="btn btn-success" value="<?php echo $table; ?>">Save</button>

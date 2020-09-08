@@ -7,10 +7,10 @@
 $id = $_GET['save'];
 $title = $_GET['title_edit'];
 $description = $_GET['description_edit'];
-$datetime = $_GET['datetime_edit'];
+$time_min = $_GET['time_min_edit'];
 $table = $_GET['table'];
 
-$sql = "UPDATE $table SET title = '$title', description = '$description', date_time = '$datetime' WHERE ID = '$id'";
+$sql = "UPDATE $table SET title = '$title', description = '$description', time_min = '$time_min' WHERE ID = '$id'";
 
 if ($conn->query($sql) === TRUE) {
 ?>

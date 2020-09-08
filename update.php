@@ -7,12 +7,11 @@
     $id = $_GET['ID'];
     $title = $_GET['title'];
     $description = $_GET['description'];
-    $datetime = $_GET['date_time'];
+    $time_min = $_GET['time_min'];
     $table = $_GET['table'];
 
     $sql = "SELECT * FROM $table WHERE ID = '$id'";
     $result = $conn->query($sql);
-
 ?>
 
 <head>
@@ -31,17 +30,17 @@
 <form method="get" action="updateCheck.php">
     <div class="form-group">
       <label for="title_edit">Title</label>
-      <input class="form-control" name="title_edit" type="text" placeholder="Titel">
+      <input class="form-control" name="title_edit" type="text" placeholder="Titel" value="<?php echo $title; ?>">
     </div>
 
     <div class="form-group">
       <label for="description_edit">Description</label>
-      <input class="form-control" name="description_edit" type="text" placeholder="Beschrijving">
+      <input class="form-control" name="description_edit" type="text" placeholder="Beschrijving" value="<?php echo $description; ?>">
     </div>
 
     <div class="form-group">
-      <label for="datetime_edit">Time</label>
-      <input class="form-control" type="datetime-local" name="datetime_edit">
+      <label for="time_min_edit">Time in minutes</label>
+      <input class="form-control" type="number" name="time_min_edit" value="<?php echo $time_min; ?>">
     </div>
 
   <button type="submit" name="save" class="btn btn-success" value="<?php echo $id;?>">Save</button>
