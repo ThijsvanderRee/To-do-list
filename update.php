@@ -7,6 +7,7 @@
     $id = $_GET['ID'];
     $title = $_GET['title'];
     $description = $_GET['description'];
+    $datetime = $_GET['date_time'];
     $table = $_GET['table'];
 
     $sql = "SELECT * FROM $table WHERE ID = '$id'";
@@ -36,6 +37,11 @@
     <div class="form-group">
       <label for="description_edit">Description</label>
       <input class="form-control" name="description_edit" type="text" placeholder="Beschrijving">
+    </div>
+
+    <div class="form-group">
+      <label for="datetime_edit">Time</label>
+      <input class="form-control" type="datetime-local" name="datetime_edit">
     </div>
 
   <button type="submit" name="save" class="btn btn-success" value="<?php echo $id;?>">Save</button>

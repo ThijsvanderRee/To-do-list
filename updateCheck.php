@@ -7,9 +7,10 @@
 $id = $_GET['save'];
 $title = $_GET['title_edit'];
 $description = $_GET['description_edit'];
+$datetime = $_GET['datetime_edit'];
 $table = $_GET['table'];
 
-$sql = "UPDATE $table SET title = '$title', description = '$description' WHERE ID = '$id'";
+$sql = "UPDATE $table SET title = '$title', description = '$description', date_time = '$datetime' WHERE ID = '$id'";
 
 if ($conn->query($sql) === TRUE) {
 ?>
@@ -30,13 +31,13 @@ if ($conn->query($sql) === TRUE) {
   </style>
 </head>
 
-<div class="alert alert-success text-center">
+<div class="alert alert-success">
   Your changes are saved!
 </div>
 <?php
 } else {
   ?>
-  <div class="alert alert-warning text-center w-100">
+  <div class="alert alert-warning w-100">
     Something went wrong, your changes are not saved.
   </div>
   <?php

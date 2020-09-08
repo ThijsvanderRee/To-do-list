@@ -33,5 +33,10 @@
       <input class="form-control" name="description_create" type="text" placeholder="Beschrijving">
     </div>
 
+    <div class="form-group">
+      <label for="datetime_create">Time</label>
+      <input class="form-control" type="datetime-local" name="datetime_create">
+    </div>
+
   <button type="submit" name="create" class="btn btn-success" value="<?php echo $table; ?>">Save</button>
 </form>

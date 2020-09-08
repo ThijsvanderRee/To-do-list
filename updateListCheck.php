@@ -26,13 +26,13 @@ $sql = "RENAME TABLE `$table` TO `$new_name`";
 <?php
 if ($conn->query($sql) === TRUE) {
 ?>
-    <div class="alert alert-success text-center">
+    <div class="alert alert-success">
       Your changes are saved!
     </div>
 <?php
 } else {
   ?>
-  <div class="alert alert-warning text-center w-100">
+  <div class="alert alert-warning w-100">
     Something went wrong, your changes are not saved.
   </div>
   <?php

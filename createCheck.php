@@ -6,9 +6,10 @@
 
 $title = $_GET['title_create'];
 $description = $_GET['description_create'];
+$datetime = $_GET['datetime_create'];
 $table = $_GET['create'];
 
-$sql = "INSERT INTO `$table`(title, description) VALUES ('$title', '$description')";
+$sql = "INSERT INTO `$table`(title, description, date_time) VALUES ('$title', '$description', '$datetime')";
 ?>
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
