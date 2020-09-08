@@ -11,7 +11,7 @@
       `ID` INT NOT NULL AUTO_INCREMENT ,
       `title` VARCHAR(255) CHARACTER SET armscii8 COLLATE armscii8_bin NULL DEFAULT NULL ,
       `description` VARCHAR(255) CHARACTER SET armscii8 COLLATE armscii8_bin NULL DEFAULT NULL ,
-      `time` INT NULL DEFAULT NULL ,
+      `time_min` INT(255) NULL DEFAULT NULL,
       PRIMARY KEY (`ID`)) ENGINE = InnoDB;"
 
 ?>
