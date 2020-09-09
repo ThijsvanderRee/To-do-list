@@ -6,6 +6,7 @@
 
 
 $table = $_GET['table'];
+$table_= str_replace('_', ' ', $table);
 
 ?>
 
