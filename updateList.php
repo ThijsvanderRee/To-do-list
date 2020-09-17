@@ -25,10 +25,11 @@ $table_= str_replace('_', ' ', $table);
 
 <body>
   <form method="get" action="updateListCheck.php">
-      <div class="form-group">
-        <label for="list_name">List name</label>
-        <input class="form-control" name="new_name" type="text" placeholder="Name" value="<?php echo $table; ?>">
-      </div>
+    <div class="form-group">
+      <label for="list_name">List name</label>
+      <input class="form-control" name="new_name" type="text" placeholder="Name" value="<?php echo $table; ?>">
+    </div>
+    <a class="btn btn-danger" href="index.php">Cancel</a>
     <button type="submit" name="edit" class="btn btn-success" value="<?php echo $table;?>">Save</button>
   </form>
 </body>

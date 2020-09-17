@@ -43,6 +43,7 @@
       <input class="form-control" type="number" name="time_min_edit" value="<?php echo $time_min; ?>">
     </div>
 
+  <a class="btn btn-danger" href="index.php">Cancel</a>
   <button type="submit" name="save" class="btn btn-success" value="<?php echo $id;?>">Save</button>
   <input name="table" style="display:none;" value="<?php echo $table; ?>">
 </form>
