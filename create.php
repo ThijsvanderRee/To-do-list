@@ -39,4 +39,5 @@
     </div>
 
   <button type="submit" name="create" class="btn btn-success" value="<?php echo $table; ?>">Save</button>
+  <a class="btn btn-danger" href="index.php">Cancel</a>
 </form>

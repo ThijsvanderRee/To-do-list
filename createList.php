@@ -25,5 +25,6 @@
         <input class="form-control" name="list_name" type="text" placeholder="Name">
       </div>
     <button type="submit" name="create" class="btn btn-success" value="">Save</button>
+    <a class="btn btn-danger" href="index.php">Cancel</a>
   </form>
 </body>

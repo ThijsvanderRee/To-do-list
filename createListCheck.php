@@ -36,7 +36,7 @@ if ($conn->query($sql) === TRUE) {
 </div>
 <?php } else { ?>
 <div class="alert alert-warning">
-  Something went wrong, list not created.
+  Something went wrong, list not created. This list name may be allready in use.
 </div>
 <?php } ?>
 <br>
