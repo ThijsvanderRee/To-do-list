@@ -43,4 +43,4 @@ if ($conn->query($sql) === TRUE) {
 }
 ?>
 <br>
-<a href="index.php">Home</a>
+<a href="index.php" class="btn btn-primary">Home</a>
