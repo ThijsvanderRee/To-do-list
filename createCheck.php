@@ -8,6 +8,9 @@ $title = $_GET['title_create'];
 $description = $_GET['description_create'];
 $time_min = $_GET['time_min_create'];
 $table = $_GET['create'];
+$title = preg_replace("/[\'\")(;|`,<>]/", "", $title);
+$description = preg_replace("/[\'\")(;|`,<>]/", "", $description);
+$time_min = preg_replace("/[\'\")(;|`,<>]/", "", $time_min);
 
 $sql = "INSERT INTO `$table`(title, description, time_min) VALUES ('$title', '$description', '$time_min')";
 ?>

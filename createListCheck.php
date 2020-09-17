@@ -5,6 +5,7 @@
     }
 
     $list_name = $_GET['list_name'];
+    $list_name = preg_replace("/[\'\")(;|`,<>]/", "", $list_name);
     $list_name_= str_replace(' ', '_', $list_name);
     // echo $list_name_;
     $sql = "CREATE TABLE `to-do-list`. `$list_name_` (

@@ -6,6 +6,7 @@
 
 $table = $_GET['edit'];
 $new_name = $_GET['new_name'];
+$new_name = preg_replace("/[\'\")(;|`,<>]/", "", $new_name);
 $new_name_= str_replace(' ', '_', $new_name);
 
 $sql = "RENAME TABLE `$table` TO `$new_name_`";
