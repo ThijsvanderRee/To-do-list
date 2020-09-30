@@ -8,12 +8,13 @@ $id = $_GET['save'];
 $title = $_GET['title_edit'];
 $description = $_GET['description_edit'];
 $time_min = $_GET['time_min_edit'];
+$status = $_GET['status_edit'];
 $table = $_GET['table'];
 $title = preg_replace("/[\'\")(;|`,<>]/", "", $title);
 $description = preg_replace("/[\'\")(;|`,<>]/", "", $description);
 $time_min = preg_replace("/[\'\")(;|`,<>]/", "", $time_min);
 
-$sql = "UPDATE $table SET title = '$title', description = '$description', time_min = '$time_min' WHERE ID = '$id'";
+$sql = "UPDATE $table SET title = '$title', description = '$description', time_min = '$time_min', status = '$status' WHERE ID = '$id'";
 
 if ($conn->query($sql) === TRUE) {
 ?>

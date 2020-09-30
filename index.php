@@ -56,6 +56,7 @@
               <h4> <?php echo $row['title'];?></h4>
               <p> <?php echo $row['description']?></p>
               <p> <?php echo $row['time_min'] ?> min</p>
+              <p> <?php echo $row['status'] ?></p>
               <a class="btn btn-danger" href="delete.php?ID=<?php echo($row["ID"]);?>&table=<?php echo $table ?>">Delete</a>
               <a class="btn btn-success" href="update.php?ID=<?php echo($row["ID"]);?>&title=<?php echo($row['title']);?>&description=<?php echo($row['description']);?>&time_min=<?php echo ($row['time_min']); ?>&table=<?php echo $table ?>">Edit</a>
             </div>

@@ -38,6 +38,15 @@
       <input class="form-control" type="number" name="time_min_create">
     </div>
 
+    <div class="form-group">
+      <label for="status_create">Status</label>
+      <select class="form-control" name="status_create">
+        <option value="to_do">To do</option>
+        <option value="doing">Doing</option>
+        <option value="done">Done</option>
+      </select>
+    </div>
+
   <button type="submit" name="create" class="btn btn-success" value="<?php echo $table; ?>">Save</button>
   <a class="btn btn-danger" href="index.php">Cancel</a>
 </form>

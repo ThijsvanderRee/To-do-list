@@ -8,6 +8,7 @@
     $title = $_GET['title'];
     $description = $_GET['description'];
     $time_min = $_GET['time_min'];
+    $status = $_GET['status'];
     $table = $_GET['table'];
 
     $sql = "SELECT * FROM $table WHERE ID = '$id'";
@@ -41,6 +42,15 @@
     <div class="form-group">
       <label for="time_min_edit">Time in minutes</label>
       <input class="form-control" type="number" name="time_min_edit" value="<?php echo $time_min; ?>">
+    </div>
+
+    <div class="form-group">
+      <label for="status_edit">Status</label>
+      <select class="form-control" name="status_edit" value="<?php echo $status; ?>">
+        <option value="to do">To do</option>
+        <option value="doing">Doing</option>
+        <option value="done">Done</option>
+      </select>
     </div>
 
   <a class="btn btn-danger" href="index.php">Cancel</a>
