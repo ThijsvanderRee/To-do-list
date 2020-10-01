@@ -53,7 +53,7 @@
       </select>
     </div>
 
-  <a class="btn btn-danger" href="index.php">Cancel</a>
   <button type="submit" name="save" class="btn btn-success" value="<?php echo $id;?>">Save</button>
+  <a class="btn btn-danger" href="index.php">Cancel</a>
   <input name="table" style="display:none;" value="<?php echo $table; ?>">
 </form>

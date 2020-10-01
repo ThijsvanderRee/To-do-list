@@ -44,21 +44,20 @@
       ?>
       <div class="card" style="width: 18rem;">
         <div class="card-header">
-          <h2><?php echo $table_; ?></h2>
-          <a href="deleteList.php?table=<?php echo $table;?>" class="btn btn-danger">Delete list</a>
+          <h2 style="text-transform: capitalize;"><?php echo $table_; ?></h2>
           <a href="updateList.php?table=<?php echo $table;?>" class="btn btn-success">Edit list</a>
+          <a href="deleteList.php?table=<?php echo $table;?>" class="btn btn-danger">Delete list</a>
           <hr>
           <a href="create.php?table=<?php echo $table;?>" class="btn btn-primary">Create new item</a>
         </div>
         <ul class="list-group list-group-flush">
           <?php while($row = $res->fetch_assoc()) { ?>
             <div class="list-group-item">
-              <h4> <?php echo $row['title'];?></h4>
-              <p> <?php echo $row['description']?></p>
-              <p> <?php echo $row['time_min'] ?> min</p>
-              <p> <?php echo $row['status'] ?></p>
-              <a class="btn btn-danger" href="delete.php?ID=<?php echo($row["ID"]);?>&table=<?php echo $table ?>">Delete</a>
+              <h4 style="text-transform: capitalize;"> <?php echo $row['title'];?></h4>
+              <p style="text-transform: capitalize;"> <?php echo $row['description']?></p>
+              <p style="text-transform: capitalize;"> <?php echo $row['time_min'] ?>min - <?php echo $row['status'] ?></p>
               <a class="btn btn-success" href="update.php?ID=<?php echo($row["ID"]);?>&title=<?php echo($row['title']);?>&description=<?php echo($row['description']);?>&time_min=<?php echo ($row['time_min']); ?>&table=<?php echo $table ?>">Edit</a>
+              <a class="btn btn-danger" href="delete.php?ID=<?php echo($row["ID"]);?>&table=<?php echo $table ?>">Delete</a>
             </div>
           <?php } ?>
         </ul>

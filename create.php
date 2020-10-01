@@ -41,7 +41,7 @@
     <div class="form-group">
       <label for="status_create">Status</label>
       <select class="form-control" name="status_create">
-        <option value="to_do">To do</option>
+        <option value="to do">To do</option>
         <option value="doing">Doing</option>
         <option value="done">Done</option>
       </select>
