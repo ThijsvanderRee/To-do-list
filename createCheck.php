@@ -1,8 +1,8 @@
 <?php
-    $conn = new mysqli('localhost', 'root', 'mysql', 'to-do-list');
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+  $conn = new mysqli('localhost', 'root', 'mysql', 'to-do-list');
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
 
 $title = $_GET['title_create'];
 $description = $_GET['description_create'];
@@ -31,20 +31,14 @@ $sql = "INSERT INTO `$table`(title, description, time_min, status) VALUES ('$tit
     }
   </style>
 </head>
-<?php
-if ($conn->query($sql) === TRUE) {
-  ?>
+<?phpif ($conn->query($sql) === TRUE) { ?>
 <div class="alert alert-success">
   Item created!
 </div>
-<?php
-} else {
-?>
+<?php } else { ?>
 <div class="alert alert-warning">
   Something went wrong, item not created.
 </div>
-<?php
-}
-?>
+<?php } ?>
 <br>
 <a href="index.php" class="btn btn-primary">Home</a>

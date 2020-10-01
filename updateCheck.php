@@ -1,20 +1,20 @@
 <?php
-    $conn = new mysqli('localhost', 'root', 'mysql', 'to-do-list');
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+  $conn = new mysqli('localhost', 'root', 'mysql', 'to-do-list');
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
 
-$id = $_GET['save'];
-$title = $_GET['title_edit'];
-$description = $_GET['description_edit'];
-$time_min = $_GET['time_min_edit'];
-$status = $_GET['status_edit'];
-$table = $_GET['table'];
-$title = preg_replace("/[\'\")(;|`,<>]/", "", $title);
-$description = preg_replace("/[\'\")(;|`,<>]/", "", $description);
-$time_min = preg_replace("/[\'\")(;|`,<>]/", "", $time_min);
+  $id = $_GET['save'];
+  $title = $_GET['title_edit'];
+  $description = $_GET['description_edit'];
+  $time_min = $_GET['time_min_edit'];
+  $status = $_GET['status_edit'];
+  $table = $_GET['table'];
+  $title = preg_replace("/[\'\")(;|`,<>]/", "", $title);
+  $description = preg_replace("/[\'\")(;|`,<>]/", "", $description);
+  $time_min = preg_replace("/[\'\")(;|`,<>]/", "", $time_min);
 
-$sql = "UPDATE $table SET title = '$title', description = '$description', time_min = '$time_min', status = '$status' WHERE ID = '$id'";
+  $sql = "UPDATE $table SET title = '$title', description = '$description', time_min = '$time_min', status = '$status' WHERE ID = '$id'";
 
 if ($conn->query($sql) === TRUE) {
 ?>
@@ -38,14 +38,10 @@ if ($conn->query($sql) === TRUE) {
 <div class="alert alert-success">
   Your changes are saved!
 </div>
-<?php
-} else {
-  ?>
+<?php } else { ?>
   <div class="alert alert-warning w-100">
     Something went wrong, your changes are not saved.
   </div>
-  <?php
-}
-?>
+<?php } ?>
 <br>
 <a href="index.php" class="btn btn-primary">Home</a>

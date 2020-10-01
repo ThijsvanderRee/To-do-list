@@ -1,15 +1,15 @@
 <?php
-    $conn = new mysqli('localhost', 'root', 'mysql', 'to-do-list');
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+  $conn = new mysqli('localhost', 'root', 'mysql', 'to-do-list');
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
 
-$table = $_GET['edit'];
-$new_name = $_GET['new_name'];
-$new_name = preg_replace("/[\'\")(;|`,<>]/", "", $new_name);
-$new_name_= str_replace(' ', '_', $new_name);
+  $table = $_GET['edit'];
+  $new_name = $_GET['new_name'];
+  $new_name = preg_replace("/[\'\")(;|`,<>]/", "", $new_name);
+  $new_name_= str_replace(' ', '_', $new_name);
 
-$sql = "RENAME TABLE `$table` TO `$new_name_`";
+  $sql = "RENAME TABLE `$table` TO `$new_name_`";
 ?>
 
 <head>
@@ -25,20 +25,14 @@ $sql = "RENAME TABLE `$table` TO `$new_name_`";
   </style>
 </head>
 
-<?php
-if ($conn->query($sql) === TRUE) {
-?>
-    <div class="alert alert-success">
-      Your changes are saved!
-    </div>
-<?php
-} else {
-  ?>
+<?php if ($conn->query($sql) === TRUE) { ?>
+  <div class="alert alert-success">
+    Your changes are saved!
+  </div>
+<?php } else { ?>
   <div class="alert alert-warning w-100">
     Something went wrong, your changes are not saved.
   </div>
-  <?php
-}
-?>
+<?php } ?>
 <br>
 <a href="index.php" class="btn btn-primary">Home</a>

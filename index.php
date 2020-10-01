@@ -1,12 +1,12 @@
 <?php
-    $conn = new mysqli('localhost', 'root', 'mysql', 'to-do-list');
-    $conn->set_charset("utf8");
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-        $tables = array();
-        $sql = "SHOW TABLES";
-        $result = $conn->query($sql);
+  $conn = new mysqli('localhost', 'root', 'mysql', 'to-do-list');
+  $conn->set_charset("utf8");
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  }
+      $tables = array();
+      $sql = "SHOW TABLES";
+      $result = $conn->query($sql);
 ?>
 
 <head>
@@ -37,34 +37,33 @@
         $tables[] = $row[0];
     }
 
-  $data = array();
-  foreach($tables as $table){
-      $query = "select * from `$table`";
-      $res = mysqli_query($conn,$query);
-      $table_ = str_replace('_', ' ', $table);
-      ?>
-      <div class="card" style="width: 18rem;">
-        <div class="card-header">
-          <h2 style="text-transform: capitalize;"><?php echo $table_; ?></h2>
-          <a href="updateList.php?table=<?php echo $table;?>" class="btn btn-success">Edit list</a>
-          <a href="deleteList.php?table=<?php echo $table;?>" class="btn btn-danger">Delete list</a>
-          <hr>
-          <a href="create.php?table=<?php echo $table;?>" class="btn btn-primary">Create new item</a>
+    $data = array();
+    foreach($tables as $table){
+        $query = "select * from `$table`";
+        $res = mysqli_query($conn,$query);
+        $table_ = str_replace('_', ' ', $table);
+        ?>
+        <div class="card" style="width: 18rem;">
+          <div class="card-header">
+            <h2 style="text-transform: capitalize;"><?php echo $table_; ?></h2>
+            <a href="updateList.php?table=<?php echo $table;?>" class="btn btn-success">Edit list</a>
+            <a href="deleteList.php?table=<?php echo $table;?>" class="btn btn-danger">Delete list</a>
+            <hr>
+            <a href="create.php?table=<?php echo $table;?>" class="btn btn-primary">Create new item</a>
+          </div>
+          <ul class="list-group list-group-flush">
+            <?php while($row = $res->fetch_assoc()) { ?>
+              <div class="list-group-item">
+                <h4 style="text-transform: capitalize;"> <?php echo $row['title'];?></h4>
+                <p style="text-transform: capitalize;"> <?php echo $row['description']?></p>
+                <p style="text-transform: capitalize;"> <?php echo $row['time_min'] ?>min - <?php echo $row['status'] ?></p>
+                <a class="btn btn-success" href="update.php?ID=<?php echo($row["ID"]);?>&title=<?php echo($row['title']);?>&description=<?php echo($row['description']);?>&time_min=<?php echo ($row['time_min']); ?>&table=<?php echo $table ?>">Edit</a>
+                <a class="btn btn-danger" href="delete.php?ID=<?php echo($row["ID"]);?>&table=<?php echo $table ?>">Delete</a>
+              </div>
+            <?php } ?>
+          </ul>
         </div>
-        <ul class="list-group list-group-flush">
-          <?php while($row = $res->fetch_assoc()) { ?>
-            <div class="list-group-item">
-              <h4 style="text-transform: capitalize;"> <?php echo $row['title'];?></h4>
-              <p style="text-transform: capitalize;"> <?php echo $row['description']?></p>
-              <p style="text-transform: capitalize;"> <?php echo $row['time_min'] ?>min - <?php echo $row['status'] ?></p>
-              <a class="btn btn-success" href="update.php?ID=<?php echo($row["ID"]);?>&title=<?php echo($row['title']);?>&description=<?php echo($row['description']);?>&time_min=<?php echo ($row['time_min']); ?>&table=<?php echo $table ?>">Edit</a>
-              <a class="btn btn-danger" href="delete.php?ID=<?php echo($row["ID"]);?>&table=<?php echo $table ?>">Delete</a>
-            </div>
-          <?php } ?>
-        </ul>
-      </div>
-      <?php
-  }
-
+        <?php
+    }
    ?>
 </body>

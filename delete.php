@@ -1,15 +1,13 @@
 <?php
-    $conn = new mysqli('localhost', 'root', 'mysql', 'to-do-list');
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+  $conn = new mysqli('localhost', 'root', 'mysql', 'to-do-list');
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
 
-$id = $_GET['ID'];
-$table = $_GET['table'];
+  $id = $_GET['ID'];
+  $table = $_GET['table'];
 
-$sql = "DELETE FROM $table WHERE ID='$id'";
-// echo $table;
-// echo $id;
+  $sql = "DELETE FROM $table WHERE ID='$id'";
 ?>
 
 <head>
@@ -25,23 +23,14 @@ $sql = "DELETE FROM $table WHERE ID='$id'";
   </style>
 </head>
 
-<?php
-
-if ($conn->query($sql) === TRUE) {
-?>
+<?php if ($conn->query($sql) === TRUE) { ?>
   <div class="alert alert-success">
     Item deleted!
   </div>
-<?php
-} else {
-?>
-
+<?php } else { ?>
 <div class="alert alert-warning">
   Something went wrong, item not deleted.
 </div>
-
-<?php
-}
-?>
+<?php } ?>
 <br>
 <a href="index.php" class="btn btn-primary">Home</a>

@@ -1,18 +1,18 @@
 <?php
-    $conn = new mysqli('localhost', 'root', 'mysql', 'to-do-list');
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+  $conn = new mysqli('localhost', 'root', 'mysql', 'to-do-list');
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
 
-    $id = $_GET['ID'];
-    $title = $_GET['title'];
-    $description = $_GET['description'];
-    $time_min = $_GET['time_min'];
-    $status = $_GET['status'];
-    $table = $_GET['table'];
+  $id = $_GET['ID'];
+  $title = $_GET['title'];
+  $description = $_GET['description'];
+  $time_min = $_GET['time_min'];
+  $status = $_GET['status'];
+  $table = $_GET['table'];
 
-    $sql = "SELECT * FROM $table WHERE ID = '$id'";
-    $result = $conn->query($sql);
+  $sql = "SELECT * FROM $table WHERE ID = '$id'";
+  $result = $conn->query($sql);
 ?>
 
 <head>
@@ -29,29 +29,29 @@
 </head>
 
 <form method="get" action="updateCheck.php">
-    <div class="form-group">
-      <label for="title_edit">Title</label>
-      <input class="form-control" name="title_edit" type="text" placeholder="Titel" value="<?php echo $title; ?>">
-    </div>
+  <div class="form-group">
+    <label for="title_edit">Title</label>
+    <input class="form-control" name="title_edit" type="text" placeholder="Titel" value="<?php echo $title; ?>">
+  </div>
 
-    <div class="form-group">
-      <label for="description_edit">Description</label>
-      <input class="form-control" name="description_edit" type="text" placeholder="Beschrijving" value="<?php echo $description; ?>">
-    </div>
+  <div class="form-group">
+    <label for="description_edit">Description</label>
+    <input class="form-control" name="description_edit" type="text" placeholder="Beschrijving" value="<?php echo $description; ?>">
+  </div>
 
-    <div class="form-group">
-      <label for="time_min_edit">Time in minutes</label>
-      <input class="form-control" type="number" name="time_min_edit" value="<?php echo $time_min; ?>">
-    </div>
+  <div class="form-group">
+    <label for="time_min_edit">Time in minutes</label>
+    <input class="form-control" type="number" name="time_min_edit" value="<?php echo $time_min; ?>">
+  </div>
 
-    <div class="form-group">
-      <label for="status_edit">Status</label>
-      <select class="form-control" name="status_edit" value="<?php echo $status; ?>">
-        <option value="to do">To do</option>
-        <option value="doing">Doing</option>
-        <option value="done">Done</option>
-      </select>
-    </div>
+  <div class="form-group">
+    <label for="status_edit">Status</label>
+    <select class="form-control" name="status_edit" value="<?php echo $status; ?>">
+      <option value="to do">To do</option>
+      <option value="doing">Doing</option>
+      <option value="done">Done</option>
+    </select>
+  </div>
 
   <button type="submit" name="save" class="btn btn-success" value="<?php echo $id;?>">Save</button>
   <a class="btn btn-danger" href="index.php">Cancel</a>

@@ -1,20 +1,19 @@
 <?php
-    $conn = new mysqli('localhost', 'root', 'mysql', 'to-do-list');
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+  $conn = new mysqli('localhost', 'root', 'mysql', 'to-do-list');
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
 
-    $list_name = $_GET['list_name'];
-    $list_name = preg_replace("/[\'\")(;|`,<>]/", "", $list_name);
-    $list_name_= str_replace(' ', '_', $list_name);
-    // echo $list_name_;
-    $sql = "CREATE TABLE `to-do-list`. `$list_name_` (
-      `ID` INT NOT NULL AUTO_INCREMENT ,
-      `title` VARCHAR(255) CHARACTER SET armscii8 COLLATE armscii8_bin NULL DEFAULT NULL ,
-      `description` VARCHAR(255) CHARACTER SET armscii8 COLLATE armscii8_bin NULL DEFAULT NULL ,
-      `time_min` INT(255) NULL DEFAULT NULL,
-      `status` VARCHAR(255) CHARACTER SET armscii8 COLLATE armscii8_bin NULL DEFAULT NULL ,
-      PRIMARY KEY (`ID`)) ENGINE = InnoDB;"
+  $list_name = $_GET['list_name'];
+  $list_name = preg_replace("/[\'\")(;|`,<>]/", "", $list_name);
+  $list_name_= str_replace(' ', '_', $list_name);
+  $sql = "CREATE TABLE `to-do-list`. `$list_name_` (
+    `ID` INT NOT NULL AUTO_INCREMENT ,
+    `title` VARCHAR(255) CHARACTER SET armscii8 COLLATE armscii8_bin NULL DEFAULT NULL ,
+    `description` VARCHAR(255) CHARACTER SET armscii8 COLLATE armscii8_bin NULL DEFAULT NULL ,
+    `time_min` INT(255) NULL DEFAULT NULL,
+    `status` VARCHAR(255) CHARACTER SET armscii8 COLLATE armscii8_bin NULL DEFAULT NULL ,
+    PRIMARY KEY (`ID`)) ENGINE = InnoDB;"
 
 ?>
 
@@ -30,9 +29,7 @@
     }
   </style>
 </head>
-<?php
-if ($conn->query($sql) === TRUE) {
-?>
+<?php if ($conn->query($sql) === TRUE) { ?>
 <div class="alert alert-success">
   List created!
 </div>

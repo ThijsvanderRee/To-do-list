@@ -1,12 +1,12 @@
 <?php
-    $conn = new mysqli('localhost', 'root', 'mysql', 'to-do-list');
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+  $conn = new mysqli('localhost', 'root', 'mysql', 'to-do-list');
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
 
 
-$table = $_GET['table'];
-$table_= str_replace('_', ' ', $table);
+  $table = $_GET['table'];
+  $table_= str_replace('_', ' ', $table);
 
 ?>
 

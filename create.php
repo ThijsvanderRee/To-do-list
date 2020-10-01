@@ -1,12 +1,12 @@
 <?php
-    $conn = new mysqli('localhost', 'root', 'mysql', 'to-do-list');
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-        $table = $_GET['table'];
+  $conn = new mysqli('localhost', 'root', 'mysql', 'to-do-list');
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
+  $table = $_GET['table'];
 
-        $sql = "SELECT * FROM `$table`";
-        $result = $conn->query($sql);
+  $sql = "SELECT * FROM `$table`";
+  $result = $conn->query($sql);
 ?>
 
 <head>
@@ -23,29 +23,29 @@
 </head>
 
 <form method="get" action="createCheck.php">
-    <div class="form-group">
-      <label for="title_create">Title</label>
-      <input class="form-control" name="title_create" type="text" placeholder="Titel">
-    </div>
+  <div class="form-group">
+    <label for="title_create">Title</label>
+    <input class="form-control" name="title_create" type="text" placeholder="Titel">
+  </div>
 
-    <div class="form-group">
-      <label for="description_create">Description</label>
-      <input class="form-control" name="description_create" type="text" placeholder="Beschrijving">
-    </div>
+  <div class="form-group">
+    <label for="description_create">Description</label>
+    <input class="form-control" name="description_create" type="text" placeholder="Beschrijving">
+  </div>
 
-    <div class="form-group">
-      <label for="datetime_create">Time in minutes</label>
-      <input class="form-control" type="number" name="time_min_create">
-    </div>
+  <div class="form-group">
+    <label for="datetime_create">Time in minutes</label>
+    <input class="form-control" type="number" name="time_min_create">
+  </div>
 
-    <div class="form-group">
-      <label for="status_create">Status</label>
-      <select class="form-control" name="status_create">
-        <option value="to do">To do</option>
-        <option value="doing">Doing</option>
-        <option value="done">Done</option>
-      </select>
-    </div>
+  <div class="form-group">
+    <label for="status_create">Status</label>
+    <select class="form-control" name="status_create">
+      <option value="to do">To do</option>
+      <option value="doing">Doing</option>
+      <option value="done">Done</option>
+    </select>
+  </div>
 
   <button type="submit" name="create" class="btn btn-success" value="<?php echo $table; ?>">Save</button>
   <a class="btn btn-danger" href="index.php">Cancel</a>

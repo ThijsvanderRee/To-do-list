@@ -1,13 +1,11 @@
 <?php
-    $conn = new mysqli('localhost', 'root', 'mysql', 'to-do-list');
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+  $conn = new mysqli('localhost', 'root', 'mysql', 'to-do-list');
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
 
-
-$table = $_GET['table'];
-$sql = "DROP TABLE `$table`";
-
+  $table = $_GET['table'];
+  $sql = "DROP TABLE `$table`";
 ?>
 
 <head>
@@ -23,20 +21,14 @@ $sql = "DROP TABLE `$table`";
   </style>
 </head>
 
-<?php
-if ($conn->query($sql) === TRUE) {
-?>
+<?php if ($conn->query($sql) === TRUE) { ?>
 <div class="alert alert-success">
   List deleted!
 </div>
-<?php
-} else {
-  ?>
+<?php } else { ?>
   <div class="alert alert-warning">
     Something went wrong, list not deleted.
   </div>
-  <?php
-}
-?>
+<?php } ?>
 <br>
 <a href="index.php" class="btn btn-primary">Home</a>
