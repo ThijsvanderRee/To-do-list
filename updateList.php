@@ -6,6 +6,7 @@
 
 
   $table = $_GET['table'];
+  $list_name = htmlspecialchars($list_name);
   $table_= str_replace('_', ' ', $table);
 
 ?>
