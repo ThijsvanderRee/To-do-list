@@ -10,9 +10,9 @@
   $time_min = $_GET['time_min_edit'];
   $status = $_GET['status_edit'];
   $table = $_GET['table'];
-  $title = preg_replace("/[\'\")(;|`,<>]/", "", $title);
-  $description = preg_replace("/[\'\")(;|`,<>]/", "", $description);
-  $time_min = preg_replace("/[\'\")(;|`,<>]/", "", $time_min);
+  $title = htmlspecialchars($title);
+  $description = htmlspecialchars($description);
+  $time_min = htmlspecialchars($time_min);
 
   $sql = "UPDATE $table SET title = '$title', description = '$description', time_min = '$time_min', status = '$status' WHERE ID = '$id'";
 

@@ -9,9 +9,9 @@ $description = $_GET['description_create'];
 $time_min = $_GET['time_min_create'];
 $status = $_GET['status_create'];
 $table = $_GET['create'];
-$title = preg_replace("/[\'\")(;|`,<>]/", "", $title);
-$description = preg_replace("/[\'\")(;|`,<>]/", "", $description);
-$time_min = preg_replace("/[\'\")(;|`,<>]/", "", $time_min);
+$title = htmlspecialchars($title);
+$description = htmlspecialchars($description);
+$time_min = htmlspecialchars($time_min);
 
 $sql = "INSERT INTO `$table`(title, description, time_min, status) VALUES ('$title', '$description', '$time_min', '$status')";
 ?>
@@ -31,7 +31,7 @@ $sql = "INSERT INTO `$table`(title, description, time_min, status) VALUES ('$tit
     }
   </style>
 </head>
-<?phpif ($conn->query($sql) === TRUE) { ?>
+<?php if ($conn->query($sql) === TRUE) { ?>
 <div class="alert alert-success">
   Item created!
 </div>
