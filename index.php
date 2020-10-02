@@ -36,8 +36,6 @@
     while ($row = mysqli_fetch_row($result)) {
         $tables[] = $row[0];
     }
-
-    $data = array();
     foreach($tables as $table){
         $query = "select * from `$table`";
         $res = mysqli_query($conn,$query);
@@ -50,10 +48,13 @@
             <a href="deleteList.php?table=<?php echo $table;?>" class="btn btn-danger">Delete list</a>
             <hr>
             <a href="create.php?table=<?php echo $table;?>" class="btn btn-primary">Create new item</a>
+            <hr>
+            <btn onclick="sortAsc()" class="btn btn-dark">Sort asc</btn>
+            <btn onclick="" class="btn btn-dark">Sort desc</btn>
           </div>
           <ul class="list-group list-group-flush">
             <?php while($row = $res->fetch_assoc()) { ?>
-              <div class="list-group-item">
+              <div class="list-group-item" data-time="<?php echo $row['time_min'] ?>">
                 <h4> <?php echo $row['title'];?></h4>
                 <p> <?php echo $row['description']?></p>
                 <p> <?php echo $row['time_min'] ?>min - <?php echo $row['status'] ?></p>
