@@ -27,15 +27,25 @@
     .card {
       display: inline-flex;
     }
+    .btn-margin {
+      margin: 2px 0;
+    }
   </style>
 </head>
 
 <body>
-  <a href="createList.php" class="btn btn-primary" style="float: right;">Create new list</a>
+  <div style="float: right; display: inline-grid;">
+    <a href="createList.php" class="btn btn-primary btn-margin">Create new list</a>
+    <btn onclick="sortAsc()" class="btn btn-dark btn-margin">Sort asc</btn>
+    <btn onclick="" class="btn btn-dark btn-margin">Sort desc</btn>
+  </div>
   <?php
     while ($row = mysqli_fetch_row($result)) {
         $tables[] = $row[0];
     }
+
+    $number = 0;
+
     foreach($tables as $table){
         $query = "select * from `$table`";
         $res = mysqli_query($conn,$query);
@@ -49,10 +59,8 @@
             <hr>
             <a href="create.php?table=<?php echo $table;?>" class="btn btn-primary">Create new item</a>
             <hr>
-            <btn onclick="sortAsc()" class="btn btn-dark">Sort asc</btn>
-            <btn onclick="" class="btn btn-dark">Sort desc</btn>
           </div>
-          <ul class="list-group list-group-flush">
+          <ul class="list-group list-group-flush sort-group-<?php echo $number?>">
             <?php while($row = $res->fetch_assoc()) { ?>
               <div class="list-group-item" data-time="<?php echo $row['time_min'] ?>">
                 <h4> <?php echo $row['title'];?></h4>
@@ -65,6 +73,7 @@
           </ul>
         </div>
         <?php
+        $number++;
     }
    ?>
 </body>

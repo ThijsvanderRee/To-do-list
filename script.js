@@ -1,8 +1,13 @@
 function sortAsc() {
-    var items = $('.list-group-item');
-    // console.log('g');
-    items.sort(function (a, b) {
-        return +$(a).data('time') - +$(b).data('time');
-    });
-    items.appendTo('.list-group');
+    var j = document.querySelectorAll('.card').length;
+    for (i = 0; i < j; i++) {
+
+        var $sortGroup = $('.sort-group-0');
+    
+        $sortGroup.find('.list-group-item').sort(function (a, b) {
+            return +a.getAttribute('data-time') - +b.getAttribute('data-time');
+        })
+            .appendTo($sortGroup);
+            console.log($sortGroup);
+    }
 }
