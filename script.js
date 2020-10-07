@@ -2,7 +2,7 @@ function sortAsc() {
     var j = document.querySelectorAll('.card').length;
     for (i = 0; i < j; i++) {
 
-        var $sortGroup = $('.sort-group-0') ;
+        var $sortGroup = $('.sort-group-0');
         console.log($sortGroup)
     
         $sortGroup.find('.list-group-item').sort(function (a, b) {
