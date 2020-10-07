@@ -60,15 +60,15 @@
             <a href="create.php?table=<?php echo $table;?>" class="btn btn-primary">Create new item</a>
             <hr>
           </div>
-          <ul class="list-group list-group-flush sort-group-<?php echo $number?>">
+          <ul class="list-group list-group-flush sort-group-<?php echo $number?>" id="sort-group-<?php echo $number?>">
             <?php while($row = $res->fetch_assoc()) { ?>
-              <div class="list-group-item" data-time="<?php echo $row['time_min'] ?>">
+              <li class="list-group-item" data-time="<?php echo $row['time_min'] ?>">
                 <h4> <?php echo $row['title'];?></h4>
                 <p> <?php echo $row['description']?></p>
                 <p> <?php echo $row['time_min'] ?>min - <?php echo $row['status'] ?></p>
                 <a class="btn btn-success" href="update.php?ID=<?php echo($row["ID"]);?>&title=<?php echo($row['title']);?>&description=<?php echo($row['description']);?>&time_min=<?php echo ($row['time_min']); ?>&status=<?php echo ($row['status']); ?>&table=<?php echo $table ?>">Edit</a>
                 <a class="btn btn-danger" href="delete.php?ID=<?php echo($row["ID"]);?>&table=<?php echo $table ?>">Delete</a>
-              </div>
+              </li>
             <?php } ?>
           </ul>
         </div>
