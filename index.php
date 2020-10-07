@@ -37,7 +37,7 @@
   <div style="float: right; display: inline-grid;">
     <a href="createList.php" class="btn btn-primary btn-margin">Create new list</a>
     <btn onclick="sortAsc()" class="btn btn-dark btn-margin">Sort asc</btn>
-    <btn onclick="" class="btn btn-dark btn-margin">Sort desc</btn>
+    <btn onclick="sortDesc()" class="btn btn-dark btn-margin">Sort desc</btn>
   </div>
   <?php
     while ($row = mysqli_fetch_row($result)) {
