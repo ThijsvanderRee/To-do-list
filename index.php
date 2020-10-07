@@ -47,33 +47,33 @@
     $number = 0;
 
     foreach($tables as $table){
-        $query = "select * from `$table`";
-        $res = mysqli_query($conn,$query);
-        $table_ = str_replace('_', ' ', $table);
-        ?>
-        <div class="card" style="width: 18rem;">
-          <div class="card-header">
-            <h2><?php echo $table_; ?></h2>
-            <a href="updateList.php?table=<?php echo $table;?>" class="btn btn-success">Edit list</a>
-            <a href="deleteList.php?table=<?php echo $table;?>" class="btn btn-danger">Delete list</a>
-            <hr>
-            <a href="create.php?table=<?php echo $table;?>" class="btn btn-primary">Create new item</a>
-            <hr>
-          </div>
-          <ul class="list-group list-group-flush sort-group-<?php echo $number?>" id="sort-group-<?php echo $number?>">
-            <?php while($row = $res->fetch_assoc()) { ?>
-              <li class="list-group-item" data-time="<?php echo $row['time_min'] ?>">
-                <h4> <?php echo $row['title'];?></h4>
-                <p> <?php echo $row['description']?></p>
-                <p> <?php echo $row['time_min'] ?>min - <?php echo $row['status'] ?></p>
-                <a class="btn btn-success" href="update.php?ID=<?php echo($row["ID"]);?>&title=<?php echo($row['title']);?>&description=<?php echo($row['description']);?>&time_min=<?php echo ($row['time_min']); ?>&status=<?php echo ($row['status']); ?>&table=<?php echo $table ?>">Edit</a>
-                <a class="btn btn-danger" href="delete.php?ID=<?php echo($row["ID"]);?>&table=<?php echo $table ?>">Delete</a>
-              </li>
-            <?php } ?>
-          </ul>
+      $query = "select * from `$table`";
+      $res = mysqli_query($conn,$query);
+      $table_ = str_replace('_', ' ', $table);
+      ?>
+      <div class="card" style="width: 18rem;">
+        <div class="card-header">
+          <h2><?php echo $table_; ?></h2>
+          <a href="updateList.php?table=<?php echo $table;?>" class="btn btn-success">Edit list</a>
+          <a href="deleteList.php?table=<?php echo $table;?>" class="btn btn-danger">Delete list</a>
+          <hr>
+          <a href="create.php?table=<?php echo $table;?>" class="btn btn-primary">Create new item</a>
+          <hr>
         </div>
-        <?php
-        $number++;
+        <ul class="list-group list-group-flush sort-group-<?php echo $number?>" id="sort-group-<?php echo $number?>">
+          <?php while($row = $res->fetch_assoc()) { ?>
+            <li class="list-group-item" data-time="<?php echo $row['time_min'] ?>">
+              <h4> <?php echo $row['title'];?></h4>
+              <p> <?php echo $row['description']?></p>
+              <p> <?php echo $row['time_min'] ?>min - <?php echo $row['status'] ?></p>
+              <a class="btn btn-success" href="update.php?ID=<?php echo($row["ID"]);?>&title=<?php echo($row['title']);?>&description=<?php echo($row['description']);?>&time_min=<?php echo ($row['time_min']); ?>&status=<?php echo ($row['status']); ?>&table=<?php echo $table ?>">Edit</a>
+              <a class="btn btn-danger" href="delete.php?ID=<?php echo($row["ID"]);?>&table=<?php echo $table ?>">Delete</a>
+            </li>
+          <?php } ?>
+        </ul>
+      </div>
+      <?php
+      $number++;
     }
    ?>
 </body>

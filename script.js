@@ -2,7 +2,7 @@ function sortAsc() {
     var j = document.querySelectorAll('.card').length;
     for (i = 0; i < j; i++) {
 
-        var $sortGroup = document.getElementById('sort-group-0');
+        var $sortGroup = $('.sort-group-0') ;
         console.log($sortGroup)
     
         $sortGroup.find('.list-group-item').sort(function (a, b) {
@@ -26,7 +26,3 @@ function sortDesc() {
             console.log(j);
     }
 }
-
-// Array.from(document.querySelectorAll("ul > li[data-time]"))
-//     .sort(({ dataset: { time: a } }, { dataset: { time: b } }) => a.localeCompare(b)) // To reverse it, use `b.localeCompare(a)`.
-//     .forEach((item) => item.parentNode.appendChild(item));

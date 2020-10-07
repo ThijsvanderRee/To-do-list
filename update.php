@@ -50,18 +50,6 @@
       <option value="to do">To do</option>
       <option value="doing">Doing</option>
       <option value="done">Done</option>
-      <!-- <?php if ($status = "doing") { ?>
-        <option value="to do">To do</option>
-      <option value="doing" selected>Doing</option>
-      <option value="done">Done</option>
-      <?php
-      } else if ($status = "done") { ?>
-        <option value="to do">To do</option>
-      <option value="doing">Doing</option>
-      <option value="done" selected>Done</option>
-      <?php
-      }
-      ?> -->
     </select>
   </div>
 
