@@ -18,20 +18,9 @@ function sortAsc() {
             return +a.getAttribute('data-time') - +b.getAttribute('data-time');
         })
             .appendTo($sortGroup);
-            // console.log(j);
     }
 }
 
-// function getID() {
-//     var j = document.querySelectorAll('.card').length;
-//     element = [];
-//     for (let k = 0; k < j; k++) {
-        
-//         var x = document.getElementsByClassName("list-group")[k].id;
-//         element.push(x);
-//     }
-//     console.log(element);
-// }
 
 // function sortDesc() {
 //     var j = document.querySelectorAll('.card').length;
